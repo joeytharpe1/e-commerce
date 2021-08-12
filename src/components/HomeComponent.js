@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import ProductComponent from './ProductComponent';
 
 
 import Grid from '@material-ui/core/Grid';
@@ -10,6 +11,9 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles((theme) => ({
     container: {
         marginTop: 15,
+    },
+    container2: {
+        marginTop: 35,
     },
     root: {
         display: 'flex',
@@ -40,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     },
     image: {
         // opacity:'0.7'
-        filter: 'brightness(0.7)'
+        filter: 'brightness(0.8)'
     },
     hiring: {
         fontWeight: 700,
@@ -58,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '16px',
         lineHeight: '24px'
     },
-    ol:{
+    ol: {
         listStyle: 'none',
         marginTop: 80,
     }
@@ -95,7 +99,7 @@ function HomeComponent() {
                 </Grid>
 
                 <Grid container spacing={3}>
-                    <Grid item xs={12} md={6} style={{justifyContent: 'center'}}>
+                    <Grid item xs={12} md={6} style={{ justifyContent: 'center' }}>
                         <ol className={classes.ol}>
                             <li><Typography variant="h4" className={classes.join}>Join the Team</Typography></li>
                             <li><Typography variant="h3" gutterBottom className={classes.hiring}>WE’RE HIRING</Typography></li>
@@ -104,8 +108,97 @@ function HomeComponent() {
                         </ol>
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <img src='images/hiring.jpg' alt='Hiring' height='100%' width='100%' style={{objectFit: 'cover'}} />
+                        <img src='images/hiring.jpg' alt='Hiring' height='100%' width='100%' style={{ objectFit: 'cover' }} />
                     </Grid>
+                </Grid>
+
+                <Grid container spacing={3}>
+                    <Grid item xs={12} align='center'>
+                        <ol className={classes.ol}>
+                            <li><Typography variant="h4" gutterBottom className={classes.hiring}>WHAT'S IN STORE</Typography></li>
+                            <li><Typography variant="body1" component='p' gutterBottom className={classes.joinP}>Explore the services we offer at your local store.</Typography></li>
+                            <span><Button className={classes.applyButton}>Find a Store Near You</Button></span>
+                        </ol>
+                    </Grid>
+                </Grid>
+
+                <Grid container spacing={3} className={classes.container2}>
+                    <Grid item xs={12} align='center'>
+                        <Typography variant="h4" gutterbuttom className={classes.hiring}>
+                            Tech to make the most of student life.
+                        </Typography>
+                    </Grid>
+                </Grid>
+
+                <Grid container spacing={2} className={classes.container}>
+                    <Grid item xs={12} md={4} align='center'>
+                        <img src='images/healthy.jpg' alt='Hiring' height='400px' width='410px' />
+                        <Typography variant="h6" gutterbuttom className={classes.hiring}>
+                            Tech for a healthy you
+                        </Typography>
+                        <Typography variant="body1" gutterbuttom>
+                            Make looking good, staying fit and being healthy happen.
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} md={4} align='center'>
+                        <img src='images/vr.jpg' alt='Hiring' height='400px' width='410px' />
+                        <Typography variant="h6" gutterbuttom className={classes.hiring}>
+                            Tech for back-to-school fun.                        </Typography>
+                        <Typography variant="body1" gutterbuttom>
+                            Make good times happen, with tech for hobbies, gaming, travel and relaxing.
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} md={4} align='center'>
+                        <img src='images/study.jpg' alt='Hiring' height='400px' width='410px' />
+                        <Typography variant="h6" gutterbuttom className={classes.hiring}>
+                            Tech for studying
+                        </Typography>
+                        <Typography variant="body1" gutterbuttom>
+                            Make great results happen with must-have study tech.
+                        </Typography>
+                    </Grid>
+                </Grid>
+
+                <Grid container spacing={2} className={classes.container} >
+                    <Grid item xs={12} md={4} align='center'>
+                        <img src='images/college.jpg' alt='Hiring' height='400px' width='410px' />
+                        <Typography variant="h6" gutterbuttom className={classes.hiring}>
+                            Essential tech for college.
+                        </Typography>
+                        <Typography variant="body1" gutterbuttom>
+                            Must-have tech for making it all happen this school year.
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} md={4} align='center'>
+                        <img src='images/student.jpg' alt='Hiring' height='400px' width='410px' />
+                        <Typography variant="h6" gutterbuttom className={classes.hiring}>
+                            Create your student living space.
+                        </Typography>
+                        <Typography variant="body1" gutterbuttom>
+                            Tech for every room and for everything you need to make happen this school year.
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} md={4} align='center'>
+                        <img src='images/productivity.jpg' alt='Hiring' height='400px' width='410px' />
+                        <Typography variant="h6" gutterbuttom className={classes.hiring}>
+                            Get productivity and performance from Apple.
+                        </Typography>
+                        <Typography variant="body1" gutterbuttom>
+                            Make it all happen with Macbook, iPad, Apple Watch and more.
+                        </Typography>
+                    </Grid>
+                </Grid>
+
+                <Grid container spacing={3} className={classes.container2}>
+                    <Grid item xs={12} align='center'>
+                        <Typography variant="h4" gutterbuttom className={classes.hiring}>
+                            Shop for your convience
+                        </Typography>
+                    </Grid>
+                </Grid>
+
+                <Grid container spacing={1} className={classes.container2}>
+                    <ProductComponent />
                 </Grid>
             </Container>
         </Container>

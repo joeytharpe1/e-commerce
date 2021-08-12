@@ -71,10 +71,10 @@ function Navbar() {
     const classes = useStyles();
     return (
         <>
-            <AppBar position="static" className={classes.root}>
+            <AppBar position="sticky" className={classes.root}>
                 <Toolbar >
                     <Typography variant="h6" align="left">
-                        <Button component={Link} to='/home' className={classes.button}
+                        <Button component={Link} to='/' className={classes.button}
                             color="inherit"
                         >
                             Home

@@ -37,10 +37,10 @@ function MainComponent() {
             <ThemeProvider theme={theme}>
                 <HeaderComponent />
                 <Switch>
-                    <Route path='/home' component={HomeComponent} />
-                    <Route path='/cart' component={CartComponent} />
-                    <Route path='/order' component={OrderComponent} />
-                    <Route path='/payment' component={PaymentComponent} />
+                    <Route exact path='/' component={HomeComponent} />
+                    <Route exact path='/cart' component={CartComponent} />
+                    <Route exact path='/order' component={OrderComponent} />
+                    <Route exact path='/payment' component={PaymentComponent} />
                 </Switch>
                 <FooterComponent />
             </ThemeProvider>
