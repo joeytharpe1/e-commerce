@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import {add, decrement} from '../redux/cart' 
+
 
 //material-ui is
 import { makeStyles } from '@material-ui/core/styles';
@@ -13,6 +16,7 @@ import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import DeleteIcon from '@material-ui/icons/Delete';
 // import FavoriteIcon from '@material-ui/icons/Favorite';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
@@ -38,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
     expandOpen: {
       transform: 'rotate(180deg)',
     },
+    addIcon:{
+      color: theme.palette.primary.light
+    }
     // avatar: {
     //   backgroundColor: red[500],
     // },
@@ -45,6 +52,8 @@ const useStyles = makeStyles((theme) => ({
 
 function ProductData({data}) {
 const {title, price, description, category, image} = data;
+const dispatch = useDispatch()
+let today = new Date().toLocaleDateString()
 
     const classes = useStyles();
     const [expanded, setExpanded] = useState(false);
@@ -58,7 +67,7 @@ const {title, price, description, category, image} = data;
             <Card className={classes.root} elevation={15}>
                 <CardHeader
                     title={title}
-                    subheader={Date.now()}
+                    subheader={today}
                 />
                 <CardMedia
                 component='img'
@@ -71,9 +80,14 @@ const {title, price, description, category, image} = data;
                     </Typography>
                 </CardContent>
                 <CardActions disableSpacing>
-                    <IconButton aria-label="add to favorites">
-                        <AddShoppingCartIcon />
+
+                    <IconButton aria-label="add to shopping cart">
+                        <AddShoppingCartIcon className={classes.addIcon} onClick={() => dispatch(add())}/>
                     </IconButton>
+                    <IconButton aria-label="delete">
+                        <DeleteIcon color='primary' onClick={() => dispatch(decrement())}/>
+                    </IconButton>
+
                     <IconButton
                         className={clsx(classes.expand, {
                             [classes.expandOpen]: expanded,

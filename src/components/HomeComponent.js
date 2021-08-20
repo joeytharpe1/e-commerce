@@ -51,6 +51,11 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'uppercase',
         letterSpacing: '.02em'
     },
+    dateformat: {
+        fontWeight: 500,
+        letterSpacing: '.02em',
+        opacity: 0.3,
+    },
     join: {
         color: theme.palette.primary.main,
         marginBottom: '16px',
@@ -71,10 +76,19 @@ const useStyles = makeStyles((theme) => ({
 
 function HomeComponent() {
     const classes = useStyles();
+    let Today = new Date().toLocaleDateString()
+
 
     return (
         <Container class={classes.container}>
             <Container>
+                <Grid container spacing={3}>
+                    <Grid item xs={12}>
+                        <Typography gutterBottom variant="h4" align="center" className={classes.dateformat}>
+                            {Today}
+                        </Typography>
+                    </Grid>
+                </Grid>
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
                         <Typography variant="h3" align="center" className={classes.hiring}>

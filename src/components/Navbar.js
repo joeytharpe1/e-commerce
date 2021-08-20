@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { useSelector} from 'react-redux';
+
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -69,6 +71,10 @@ const useStyles = makeStyles((theme) => ({
 
 function Navbar() {
     const classes = useStyles();
+    const { cart } = useSelector(state => state.cart);
+
+
+
     return (
         <>
             <AppBar position="sticky" className={classes.root}>
@@ -86,7 +92,7 @@ function Navbar() {
                     <Paper component="form" className={classes.paper} align="center">
                         <InputBase
                             className={classes.input}
-                            placeholder="Search.."
+                            placeholder='Categories..'
                             inputProps={{ 'aria-label': 'search..' }}
                         />
                         <IconButton type="submit" className={classes.iconButton} aria-label="search">
@@ -113,6 +119,10 @@ function Navbar() {
                             endIcon={<ShoppingCartRoundedIcon />}
                             color="inherit"
                         >
+                            {cart <= 0 ? ( 
+                                0 ): 
+                                cart }
+                                {console.log(cart)}
                         </Button>
                     </ButtonGroup>
 

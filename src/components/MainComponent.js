@@ -17,10 +17,11 @@ import FooterComponent from './FooterComponent';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#4F0000'
+            main: '#4F0000', //maroon
+            light: '#097969' //green
         },
         secondary: {
-            main: '#ADB3BC'
+            main: '#ADB3BC' //grey
         },
         warning: {
             main: '#fff'
